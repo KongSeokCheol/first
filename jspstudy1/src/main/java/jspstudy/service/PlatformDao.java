@@ -56,16 +56,18 @@ public class PlatformDao {
 		ResultSet rs = null;
 		String str ="";
 		if (scri.getSearchType().equals("subject")) {
-			str = "and subject like concat (?) "; 
+			str = "and subject like concat (?)"; 
 		}else {
 			str = "and writer like concat (?)";
 		}
 		
-		String sql = "SELECT * FROM PC_PLATFORM ORDER by bidx desc limit 0,15";
+		String sql = "SELECT * FROM pc_platform WHERE delyn='N' "+str+" ORDER BY originbidx DESC, depth asc limit ?,10";
 					
 		
 		try {						
 			pstmt =  conn.prepareStatement(sql);
+			pstmt.setString(1, "%"+scri.getKeyword()+"%");
+			pstmt.setInt(2, (scri.getPage()-1)*10);
 			rs= pstmt.executeQuery();
 			
 			//�떎�쓬媛믪씠 議댁옱�븯硫� true�씠怨� 洹� �뻾�쑝濡� 而ㅼ꽌媛� �씠�룞�븳�떎

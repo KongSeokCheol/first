@@ -120,6 +120,7 @@ out.println("<a href='"+request.getContextPath()+"/Platform/PlatformList.do?page
 </td>
 </tr>
 </table>
+<form name="frm" action="<%=request.getContextPath()%>/Platform/PlatformList.do" method="post">
 <table id="ListSearch"> 
 <tr>
 <td style="width:620px;">
@@ -132,6 +133,7 @@ out.println("<a href='"+request.getContextPath()+"/Platform/PlatformList.do?page
 </td>
 </tr>
 </table>
+</form>
 <table id="writeBtn">
 <tr>
 <td style="text-align: right;">
