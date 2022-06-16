@@ -62,23 +62,22 @@ public class PlatformDao {
 		}
 		
 		String sql = "SELECT * FROM PC_PLATFORM ORDER by bidx desc limit 0,15";
-
 					
 		
 		try {						
 			pstmt =  conn.prepareStatement(sql);
 			rs= pstmt.executeQuery();
 			
-			//다음값이 존재하면 true이고 그 행으로 커서가 이동한다
+			//�떎�쓬媛믪씠 議댁옱�븯硫� true�씠怨� 洹� �뻾�쑝濡� 而ㅼ꽌媛� �씠�룞�븳�떎
 			while(rs.next()) {
 				PlatformVo pv = new PlatformVo();
-				pv.setBidx(rs.getInt("bidx"));		//rs에 복사된 bidx를 pv에 옮겨담는다		
+				pv.setBidx(rs.getInt("bidx"));		//rs�뿉 蹂듭궗�맂 bidx瑜� pv�뿉 �삷寃⑤떞�뒗�떎		
 				pv.setSubject(rs.getString("subject"));
 				pv.setWriter(rs.getString("writer"));
 				pv.setWriteday(rs.getString("writeday"));
 				pv.setLevel_(rs.getInt("level_"));
 				pv.setView_count(rs.getInt("view_count"));
-				alist.add(pv);   //각각의 pv객체를 alist에 추가한다
+				alist.add(pv);   //媛곴컖�쓽 pv媛앹껜瑜� alist�뿉 異붽��븳�떎
 			}					
 			
 		} catch (SQLException e) {			
@@ -98,7 +97,7 @@ public class PlatformDao {
 	}
 		
 	public PlatformVo PlatformSelectOne(int bidx) {
-		CountUpdate(bidx); //조회수 증가
+		CountUpdate(bidx); //議고쉶�닔 利앷�
 		PlatformVo pv = null;
 		ResultSet rs = null;
 		
@@ -170,7 +169,7 @@ public class PlatformDao {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return -1;//데이터베이스 오류
+		return -1;//�뜲�씠�꽣踰좎씠�뒪 �삤瑜�
 	    }
 
 	public int deletePlatform(int bidx) {
@@ -209,7 +208,7 @@ public class PlatformDao {
 				+ "VALUES(bidx_b_seq.nextval,?,?,?,?,?,?,?,?,?)";
 		
 		try {
-			//트랜잭션
+			//�듃�옖�옲�뀡
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(sql1);
 			pstmt.setInt(1, pv.getOriginbidx());
