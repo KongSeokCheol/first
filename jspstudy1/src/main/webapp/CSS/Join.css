@@ -1,0 +1,114 @@
+@charset "UTF-8";
+html, body, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, 
+em, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, 
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+article, aside, canvas, details, embed, figure, figcaption, footer, header, 
+hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0; 
+    height : 100%;
+    overflow : auto;
+}
+
+  a {
+	text-decoration : none;
+	color : inherit;
+}
+
+#logo-login-wrap {
+	position : absolute;
+	 left : 825px;
+	margin-top : 50px;
+	text-align : center;
+}
+.Nick, .Id, .Pwd, .Pwd2, .Name, .Birth, .Email{
+	border : 3px solid #A2F5E6;
+	width : 400px;
+	height : 50px;
+	font-size : 15px;
+	font-family : malgun;
+	font-weight : bold;
+	border-radius : 4px;
+	margin : 10px 10px 10px 10px;
+}
+.Gender{
+border : 3px solid #A2F5E6;
+	width : 410px;
+	height : 60px;
+	font-size : 15px;
+	border-radius : 4px;
+	margin : 5px 5px 10px 10px;
+}
+/*active : input박스 활성화 상태 
+hover: input에 마우스 올렸을 때
+focus: input box 클릭 기존에 생기던 파란박스 삭제-->*/
+input[type=text]:hover, [type=password]:hover, [type=email]:hover, .Gender:hover {
+	background : #A2F5E6;
+	outline : none;
+}
+
+input[type=submit]  {
+	height : 50px;
+	width : 95%;
+	margin : 10px 10px 10px 10px;
+	padding : 10px 10px 10px 10px;
+	background : #A2F5E6;
+	border : #A2F5E6;
+	border-radius : 5px;
+	font-weight : bold;
+	font-size : 25px;
+	color : white;	
+}
+input[type=submit]:hover {
+	background : white;
+	color : #A2F5E6;
+}
+#join_form {
+	width : 1000px;
+	height : 100%;
+}
+.join_table {
+	position : absolute;
+	left : 750px;
+	top : 20%;
+	border-collapse : collapse;
+	text-align:left;
+	height:300px;
+	font-size : 15px;
+	font-weight : bold;
+}	
+.secondTitle {
+	position : absolute;
+	display : inline-block;
+	left : 865px;
+	top : 150px;
+	text-align : center;
+	color : black;
+}
+.check { 
+	width : 410px;
+	height : 50px;
+	padding : 10px;
+}
+.Phone1 {
+	border : 3px solid #A2F5E6;
+	width : 100px;
+	height : 57px;
+	font-size : 15px;
+	font-family : malgun;
+	font-weight : bold;
+	border-radius : 4px;
+	margin : 5px 5px 10px 10px;
+	}
+.Phone2, .Phone3  {
+	border : 3px solid #A2F5E6;
+	width : 120px;
+	height : 50px;
+	font-size : 15px;
+	font-family : malgun;
+	font-weight : bold;
+	border-radius : 4px;
+	margin : 10px 10px 10px 10px;
+}
+	

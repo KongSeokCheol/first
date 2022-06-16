@@ -1,0 +1,343 @@
+@charset "UTF-8";
+
+/*전체 기본설정*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, 
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, 
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+article, aside, canvas, details, embed, figure, figcaption, footer, header, 
+hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    }
+    
+/* 로고 및 검색창 */
+ol ul {
+	list-style : none;
+}
+
+.Top-logo {
+  background: #A2F5E6;
+  width : 100%;
+  height : 100px;
+}
+
+a {
+	text-decoration : none;
+	color : inherit;
+}
+#logo-search-wrap {
+	position : absolute;
+	top : 20px;
+	left : 575px;
+	
+}
+#search {
+	position : absolute;
+	top : 30px;
+	left : 800px;
+	width : 100%;
+}
+
+#searchWord {
+	border : none;
+	width : 450px;
+	height : 35px;
+	font-size : 15px;
+	font-family : malgun;
+	font-weight : bold;
+}
+.searchButton {
+	position : absolute;
+	width : 80px;
+	height : 36px;
+	border : none;
+	background : white;
+	margin : 1px;
+	padding : 1px;
+}
+
+/* 메뉴부문 */
+
+#menu-line{	
+	height :80px;
+	width : 100%;
+    background : #A2F5E6;
+    float : left;
+}     
+#gmenu-box {
+	display : flex;
+	justify-content : center;
+	text-align : center;
+	margin : 0 auto;
+	height : 50px;
+	width : 1800px;
+}	
+#gmenu-box #gmenu-list{
+	display : flex;
+	justify-content : space-evenly;
+	width:1800px;
+	margin-top : 15px;
+	line-height : 25px;
+	color : white;
+	font-size : 27px;
+	font-weight : bold;
+}
+#gmenu-box #gmenu-list :hover{
+	background : white;
+	color : #A2F5E6;
+}
+#on {
+	color : #00C3FF;
+}
+
+li { 
+	list-style : none;
+}
+#gnb {
+	width: 500px;
+    min-width: 300px;
+    height: 30px;
+    line-height: normal;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: normal;
+    align-items: center;
+    position: absolute;
+    top: 180px;
+    left: 700px;
+    right: 0;
+    border-bottom: 1px solid transparent;
+}
+#gnb a{
+    height: 100%;
+    font-family: "Noto Sans",sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+    padding: 0 15px;
+    display: block;
+    position: relative;
+}
+
+#menu-line::before{
+	content :"";
+    display : block;
+    height : 36px;
+    position : absolute;
+    top : 180px;
+    left : 0;
+    right : 0;
+    background : #F0FFF0;
+    border-bottom : 1px solid #d2d2d2;
+    box-sizing: border-box;
+}
+#gnb a::after{
+	content:"|";
+	display: block;
+	width: 1px;
+	height: 18px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto 0;
+}
+/* 메인 화면 로그인 */
+
+#account {
+  position: absolute;
+  top: 30px;
+}
+_login {
+	padding:18px 18px 22px 18px;
+	background: white;
+    border: 3px solid #A2F5E6;
+    border-radius: 15px;
+    
+}
+.eg_login .link_login {	
+	display: block;
+	width : 250px;
+    padding: 15px 0;
+    margin-top: 11px;
+    background: #A2F5E6;
+    border: 1px solid #A2F5E6;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	margin : -1px;
+	overflow : hidden;
+}
+.ico_Every_G {
+    display: inline-block;
+    width: 25px;
+    height: 12px;
+    background-position: -138px -330px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    margin: 1px 1px 0 0;
+}
+.eg_login .sub_Area {
+	margin : 8px 8px 5px 4px;
+	letter-spacing: -2px;
+	
+}
+.Id_Pwd_box{
+	float : left;
+}
+.link_join_box {
+	float : right;
+}
+.Id_Pwd_box{
+	font-size : 12px;
+}
+.link_join_box{
+	font-size : 12px;
+}
+.right_menu {
+	display : block;
+}
+
+/* 메인 콘텐츠 */
+#PlatformContent{
+    position : absolute;
+    left : 600px;
+    right : 0;
+    top : 250px; 
+	margin : 0;
+	padding : 0;
+	width : 1000px;	
+}
+#ContentDetail{
+	text-align : left;
+	border-collapse : collapse;
+	width : 800px;
+	text-align : center;
+}
+.top{
+	height : 50px;
+	text-align : left;
+	padding : 10px;
+	background : white;
+	border-top : 1px solid #dcdcdc;
+	border-bottom : 1px solid #dcdcdc;
+}
+.subject {
+	width : 600px;
+	font-size : 25px;
+	text-align : left;
+	padding : 10px;
+}
+.writeday {
+	width : 200px;
+	text-align:right;
+	padding : 10px;
+}
+.writer {
+	width : 800px;
+	text-align : left;
+	padding : 10px;
+}
+.view {
+	width : 200px;
+	text-align:right;
+	padding : 10px;
+}
+.middle {
+	height : 100%;
+	border-bottom : 1px solid #dcdcdc;
+	padding : 10px;
+}
+.Content {
+	padding : 20px 0px 20px 0px;
+}
+.bottom {
+	width : 800px;
+}
+.file {
+	text-align : left;
+	width : 200px;
+	height : 100px;
+}
+.News-top {
+	float : left;
+}
+
+.side_menu {
+	position : absolute;
+	height : 700px;
+	right : 70px;
+	width : 300px;
+	padding : 30px;
+    display: flex;
+    float : none;
+    align-items: center;
+}
+.game_ranking{
+	background: white;
+	width : 98%;
+    border: 3px solid #A2F5E6;
+    border-radius : 10px;
+    margin-bottom: 10px;
+    padding: 24px 16px 18px 16px;
+    box-sizing: border-box;
+	}
+.ranking_title-box {
+	display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #e1e1e1;
+    margin-bottom: 15px;
+    padding-bottom: 11px;
+    box-sizing : border-box;
+}
+.ranking_list li {
+    line-height: 1;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    text-align : center;
+    
+}
+.rank_num {
+	width: 8.93%;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #f94b4b;
+}
+.rank_subject {
+	width: 65.62%;
+    font-size: 13px;
+    color: #222;
+    text-indent: 1px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.rise_fall {
+	width: 25.44%;
+    font-size: 13px;
+    color: #737373;
+    text-align: center;
+    position: relative;
+}
+
+

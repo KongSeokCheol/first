@@ -1,0 +1,80 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, 
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, 
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+article, aside, canvas, details, embed, figure, figcaption, footer, header, 
+hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+}
+
+  a {
+	text-decoration : none;
+	color : inherit;
+}
+
+#logo-login-wrap {
+	margin : 0 auto;
+	margin-top : 200px;
+	text-align : center;
+}
+
+#userInfo {
+	margin : 0 auto;
+	margin-top : 40px;
+	text-align : center;
+}
+.id_Wrap .passWord_Wrap { 
+	position : relactive;
+	padding-right : 0px;
+}
+input[type=text], [type=password] {
+	border : 3px solid #A2F5E6;
+	width : 400px;
+	height : 50px;
+	font-size : 15px;
+	font-family : malgun;
+	font-weight : bold;
+	border-radius : 4px;
+	margin : 10px 10px 10px 10px;
+	
+}
+/*active : input박스 활성화 상태 
+hover: input에 마우스 올렸을 때
+focus: input box 클릭 기존에 생기던 파란박스 삭제-->*/
+input[type=text]:hover, [type=password]:hover {
+	background : #73E1E1;
+	outline : none;
+}
+.submit {
+	margin : 10px 10px 10px 10px;
+}
+
+input[type=button] {
+	display : inline-block;
+	height : 50px;
+	width : 110px;
+	background : #A2F5E6;
+	border : #A2F5E6;
+	border-radius : 5px;
+	font-weight : bold;
+	font-size : 15px;
+	color : white;	
+}
+input[type=button]:hover{
+	background :#6EDCDC;
+	color : white;
+}
+.sub_area{
+	position : absolute;
+	margin-top : 10px;
+	left : 750px;
+	display : flex;
+	width : 400px;
+	justify-content : space-between;
+
+}
+
+	
+	
