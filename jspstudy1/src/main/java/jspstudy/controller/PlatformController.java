@@ -43,7 +43,7 @@ public class PlatformController extends HttpServlet {
 		String command= uri.substring(pj.length());
 		System.out.println("command:"+command);
 		
-		String uploadPath = "E:\\Open Api(B)\\dev\\jspstudy\\src\\main\\webapp\\";
+		String uploadPath = "C:\\Users\\MYCOM\\git\\first\\jspstudy1\\src\\main\\webapp\\";
 		String saveFolder ="images";	
 		String saveFullPath = uploadPath+saveFolder; 
 		

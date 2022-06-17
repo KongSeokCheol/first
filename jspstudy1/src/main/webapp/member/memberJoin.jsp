@@ -356,7 +356,7 @@
 	   </td>
 	</tr>
 	<tr>
-	    <td><!-- 이메일 체크 메시지 출력 -->
+	    <td><!-- 회원가입 버튼 -->
 	         <input type="submit" id="joinBtn" name="join_Btn" class="btn" value="가입하기"> 
 	   </td>
 	</tr>	

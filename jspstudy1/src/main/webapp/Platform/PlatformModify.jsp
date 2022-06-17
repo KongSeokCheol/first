@@ -107,7 +107,7 @@ String bidx = (String)request.getAttribute("bidx");
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="button" name="btn" value="확인" onclick="check();">
         <input type="reset" name="reset" value="다시작성">
-        <input type="button" name="btn2" value="돌아가기" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformList.do'">
+        <input type="button" name="btn2" value="돌아가기" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformContent.do?bidx=<%=pv.getBidx() %>'">
    </td>
 </tr>
 </table>

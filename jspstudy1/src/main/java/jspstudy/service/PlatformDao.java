@@ -14,17 +14,17 @@ public class PlatformDao {
 	
 	Connection conn;
 	PreparedStatement pstmt;
-	
+	// DB 연결 구문
 	public PlatformDao() {
 		Dbconn db = new Dbconn();
 		this.conn = db.getConnection();		
 	}
-	
+	// 게시판 Wirte시 insert 하는 구문
 	public int insertPlatform(String subject, String content, String writer, String ip, int midx, String filename, int view_count) {
 		int value=0;
 		
-		String sql="INSERT INTO PC_PLATFORM(bidx,originbidx,depth,level_,subject,content,writer,ip,midx,filename,view_count) "
-				+ "VALUES(bidx_b_seq.nextval,bidx_b_seq.nextval,0,0,?,?,?,?,?,?,0)";
+		String sql="insert into pc_platform (originbidx, depth, level_, subject, content, writer, ip, midx, filename, view_count)"
+				+ " select max(bidx)+1,0,0,?,?,?,?,?,?,0 from  pc_platform";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class PlatformDao {
 		
 		return value;
 	}
-	
+	// Search 및 Pageing 하는 구문
 	public ArrayList<PlatformVo> PlatformSelectAll(SearchCriteria scri){
 		ArrayList<PlatformVo> alist = new ArrayList<PlatformVo>();
 		ResultSet rs = null;
