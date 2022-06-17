@@ -75,18 +75,26 @@ if (session.getAttribute("midx") != null){
 </table>
 <table id="writeList2">
 <%
+
 for (PlatformVo pv : alist) {
+	
 %>
 <tr class="bottomLine">
-<td class="bidx"><%=pv.getBidx() %></td>
+
+<td class="bidx">
+     <%=pv.getBidx() %>
+</td>
+
 <td class="subject" >
 <%
+
 for(int i=1;i<=pv.getLevel_();i++){
 	out.print("&nbsp;&nbsp;");
 	if (i== pv.getLevel_()){
 		out.println("ㄴ");
 	}	
 }
+
 %>
 <a href="<%=request.getContextPath() %>/Platform/PlatformContent.do?bidx=<%=pv.getBidx() %>"><%=pv.getSubject() %></a>
 </td>
