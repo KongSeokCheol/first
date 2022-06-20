@@ -128,7 +128,7 @@ public class MemberController extends HttpServlet {
 					
 				}
 				if(memberId.equals("admin")) {
-					response.sendRedirect(request.getContextPath()+"/index3.jsp");
+					response.sendRedirect(request.getContextPath()+"/adminK.jsp");
 					  
 				}else {					
 					response.sendRedirect(request.getContextPath()+"/index2.jsp");

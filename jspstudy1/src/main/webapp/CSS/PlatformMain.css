@@ -244,13 +244,25 @@ _login {
 	background : white;
 }
 #ListSearch{
+	text-align : right;
+	width : 1000px;
+}
+#writeBtn_area {
 	width : 1000px;
 	text-align : right;
 }
-#writeBtn{
-	width : 1000px;
-	text-align : right;
+.write_btn {
+	box-sizing : border-box;
+	width : 50px;
+	height : 30px;
+	border : 1px solid gray;
+	border-radius : 2px;
+	font-size : 12px;
+    padding : 5px;
+    margin : 1px;
+    background : buttonface;
 }
+	
 .bottomLine{
 	border-bottom : 1px solid #dcdcdc;
 	height : 50px;

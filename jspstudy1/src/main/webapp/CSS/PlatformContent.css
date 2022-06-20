@@ -274,6 +274,18 @@ _login {
 	width : 200px;
 	height : 100px;
 }
+.modify_btn .delete_btn .reply_btn .platformList_btn{
+	box-sizing : border-box;
+	width : 50px;
+	height : 30px;
+	border : 1px solid gray;
+	border-radius : 2px;
+	font-size : 12px;
+    padding : 5px;
+    margin : 1px;
+    background : buttonface;
+}
+
 .News-top {
 	float : left;
 }

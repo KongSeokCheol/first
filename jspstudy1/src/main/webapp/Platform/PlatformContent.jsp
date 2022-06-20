@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="jspstudy.domain.PlatformVo" %>  
-<%
-	PlatformVo pv = (PlatformVo)request.getAttribute("pv");
-%>        
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>      
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,42 +47,56 @@
 </nav>
 <article id="PlatformContent">
 <table id="ContentDetail">
+
 <tr class="top">
-<td class="subject"><%=pv.getSubject() %></td>
-<td class="writeday"><%=pv.getWriteday() %></td>
+   <td class="subject">
+        ${pv.subject }
+   </td>
+   <td class="writeday">
+        ${pv.writeday }
+   </td>
 </tr>
+
 <tr class="top">
-<td class="writer"><%=pv.getWriter() %>
-</td>
-<td class="view">조회수<%=pv.getView_count() %></td>
+   <td class="writer">
+        ${pv.writer }
+   </td> 
+   <td class="view">
+        조회수${pv.view_count }
+   </td>
 </tr>
+
 <tr class="middle">
-<td class ="Content">
-<%=pv.getContent() %>
-<br>
-</td>
+   <td class ="Content">
+        ${pv.content }<br>
+   </td>
 </tr>
+
 <tr class="bottom">
 <td class="file">첨부파일&nbsp;&nbsp;&nbsp;
-<% 
-if (pv.getFilename() != null){ 
-	
-}else{
-	out.println("없음");
-%>
-<img src="<%=request.getContextPath()%>/images/<%=pv.getFilename()%>">
-<a href="<%=request.getContextPath()%>/Platform/fileDownload.do?filename=<%=pv.getFilename()%>"></a>
+
+<c:choose>
+<c:when test="${pv.filename != null }">
+<c:otherwise>
+없음
+</c:otherwise> 
+</c:when>
+</c:choose>
+
+
+<img src="${pageContext.request.contextPath}/images/${pv.filename}">
+<a href="${pageContext.request.contextPath}/Platform/fileDownload.do?filename=${pv.filename}"></a>
 </td>
 </tr>
-<% } %>
+
 <tr>
 </tr>
 <tr>
 <td colspan=2 style="text-align:center;">
-<input type="button" name="modify" value="수정" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformModify.do?bidx=<%=pv.getBidx()%>'">
-<input type="button" name="delete" value="삭제" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformDelete.do?bidx=<%=pv.getBidx()%>'">
-<input type="button" name="reply" value="답변" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformReply.do?bidx=<%=pv.getBidx()%>&originbidx=<%=pv.getOriginbidx()%>&depth=<%=pv.getDepth()%>&level_=<%=pv.getLevel_()%>'">
-<input type="button" name="list" value="목록" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformList.do'">
+<a class="modify_btn" href="${pageContext.request.contextPath}/Platform/PlatformModify.do?bidx=${pv.bidx}">[수정]</a>
+<a class="delete_btn" href="${pageContext.request.contextPath}/Platform/PlatformDelete.do?bidx=${pv.bidx}">[삭제]</a>
+<a class="reply_btn" href="${pageContext.request.contextPath}/Platform/PlatformReply.do?bidx=${pv.bidx}&originbidx=${pv.originbidx }&depth=${pv.depth }&${pv.level_}">[답변]</a>
+<a class="platformList_btn" href="${pageContext.request.contextPath}/Platform/PlatformList.do">[목록]</a>
 </td>
 </tr>
 </table>

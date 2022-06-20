@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import ="java.util.ArrayList" %>
-<%@page import ="jspstudy.domain.*" %>
-<%
-ArrayList<PlatformVo> alist = (ArrayList<PlatformVo>)request.getAttribute("alist");
-PageMaker pm = (PageMaker)request.getAttribute("pm");
-%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html>
@@ -61,8 +56,6 @@ if (session.getAttribute("midx") != null){
 </div>
 </nav>
 <article id="PlatformList">
-<form name="frm" action="<%=request.getContextPath()%>/Platform/PlatformList.do" method="post">
-</form>
 <table id="writeList">
 <tr style="color:#aaaaaa; border-bottom : 1px solid #dcdcdc;
 	height : 50px;">
@@ -74,61 +67,62 @@ if (session.getAttribute("midx") != null){
 </tr>
 </table>
 <table id="writeList2">
-<%
 
-for (PlatformVo pv : alist) {
+
+<c:forEach var="pv" items="${alist}" >
+
 	
-%>
 <tr class="bottomLine">
 
 <td class="bidx">
-     <%=pv.getBidx() %>
+     ${pv.bidx}
 </td>
 
 <td class="subject" >
-<%
 
-for(int i=1;i<=pv.getLevel_();i++){
-	out.print("&nbsp;&nbsp;");
-	if (i== pv.getLevel_()){
-		out.println("ㄴ");
-	}	
-}
+<c:forEach var="i" begin="1" end="${pv.level_}" step="1">
+&nbsp;&nbsp;
+<c:if test="${ i == pv.level_ }">
+ㄴ
+</c:if>
+</c:forEach>
 
-%>
-<a href="<%=request.getContextPath() %>/Platform/PlatformContent.do?bidx=<%=pv.getBidx() %>"><%=pv.getSubject() %></a>
+
+<a href="${pageContext.request.contextPath}/Platform/PlatformContent.do?bidx=${pv.bidx}">${pv.subject}</a>
 </td>
-<td class="writer"><%=pv.getWriter() %></td>
-<td class="writeday"><%=pv.getWriteday() %></td>
-<td class="view"><%=pv.getView_count() %></td>
+<td class="writer">${pv.writer}</td>
+<td class="writeday">${pv.writeday}</td>
+<td class="view">${pv.view_count}</td>
 </tr>
-<% } %>
+</c:forEach>
+
 </table>
 <table id="page">
 <tr style="height:50px;">
 <td style="width:200px; text-align:right;">
-<% if (pm.isPrev() == true){
-	out.println("<a href='"+request.getContextPath()+"/Platform/PlatformList.do?page="+(pm.getStartPage()-1)+"&keyword="+pm.encoding(pm.getScri().getKeyword())+"&searchType="+pm.getScri().getSearchType()+"'>〈이전</a>");
-	}
-%>
+<c:if test="${pm.prev == true}">
+<a href=" ${pageContext.request.contextPath}/Platform/PlatformList.do?page=${pm.startPage-1}&keyword=${pm.scri.keyword }">
+         ◀
+    </a>
+    </c:if>
 </td>
-<td>
-<%
-for (int i=pm.getStartPage(); i<=pm.getEndPage();i++){
-out.println("<a href='"+request.getContextPath()+"/Platform/PlatformList.do?page="+i+"&keyword="+pm.encoding(pm.getScri().getKeyword())+"&searchType="+pm.getScri().getSearchType()+"'>"+i+"</a>");	
-}
-%>
-</td>
-<td style="width:200px;text-align:left;">
 
-<% if(pm.isNext() && pm.getEndPage() >0) {
-	out.println("<a href='"+request.getContextPath()+"/Platform/PlatformList.do?page="+(pm.getEndPage()+1)+"&keyword="+pm.encoding(pm.getScri().getKeyword())+"&searchType="+pm.getScri().getSearchType()+"'>다음〉</a>");	
-	}  
-%> 
+<td>
+    <c:forEach begin="${pm.startPage }"  end="${pm.endPage }" step="1" var="1">
+       <a href="${pageContext.request.contextPath}/Platform/PlatformList.do?page=${i}&keyword=${pm.scri.keyword}">${i}</a>
+    </c:forEach>
+</td>
+
+<td style="width:200px;text-align:left;">
+<c:if test="${pm.next&&pm.endPage >0 }">
+<a href="${pageContext.request.contextPath }/Platform/PlatformList.do?page=${pm.EndPage+1 }&keyword=${pm.scri.keyword }">
+  ▶
+</a>
+</c:if>
 </td>
 </tr>
 </table>
-<form name="frm" action="<%=request.getContextPath()%>/Platform/PlatformList.do" method="post">
+<form name="frm" action="${pageContext.request.contextPath }/Platform/PlatformList.do" method="post">
 <table id="ListSearch"> 
 <tr>
 <td style="width:620px;">
@@ -142,10 +136,10 @@ out.println("<a href='"+request.getContextPath()+"/Platform/PlatformList.do?page
 </tr>
 </table>
 </form>
-<table id="writeBtn">
+<table>
 <tr>
-<td style="text-align: right;">
-    <input type="button" name="Write" value="글작성" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformWrite.do'">
+<td id="writeBtn_area">
+     <a href="${pageContext.request.contextPath}/Platform/PlatformWrite.do" class="write_btn">글작성</a> 
 </td>
 </tr>
 </table>

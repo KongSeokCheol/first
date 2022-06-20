@@ -11,7 +11,6 @@
 
     ArrayList<MemberVo> alist=(ArrayList<MemberVo>)request.getAttribute("alist");
     
-    
 %>   
    
 <!DOCTYPE html>
