@@ -12,7 +12,7 @@
 <body>
 <header id="Top_logo_bg">
         <div class="logo-wrap">
-           <a href="index.jsp" class="logo">Every G</a>
+           <a href="../index.jsp" class="logo">Every G</a>
         </div>
         <div>      
         <form id="search" action="/search/result" method="POST">

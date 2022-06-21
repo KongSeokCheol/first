@@ -17,7 +17,7 @@ html, body {
 	overflow-x :hidden;
 }
 /* 로고 및 검색창 */
-ol ul {
+ol ul li {
 	list-style : none;
 }
 a {
@@ -100,10 +100,6 @@ a {
 }
 #on {
 	color : #C0FFFF;
-}
-
-li { 
-	list-style : none;
 }
 #gnb {
 	width: 500px;

@@ -14,7 +14,7 @@ hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font-size: 100%;
     }
 /* 로고 및 검색창 */
-ol ul li {
+ol, ul, li{
 	list-style : none;
 }
 a {

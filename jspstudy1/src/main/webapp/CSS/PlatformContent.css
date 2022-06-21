@@ -15,7 +15,7 @@ hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     }
     
 /* 로고 및 검색창 */
-ol ul {
+ol, ul, li{
 	list-style : none;
 }
 a {

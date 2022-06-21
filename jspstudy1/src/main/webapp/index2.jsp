@@ -14,15 +14,14 @@ function Check(){
 </script>
 </head>
 <body>
-<header class="Top-logo">
-        <div id="logo-search-wrap">
-           <a href="index2.jsp"> 
-             <img id="logo-img" alt="logo" src="images/logo.png"></a></div>
+<header id="Top_logo_bg">
+        <div class="logo-wrap">
+           <a href="index.jsp" class="logo">Every G</a>
+        </div>
         <div>      
-        <form id="search" action="/search/result" method="GET">
-            <input type="text" id="searchWord" name="searchWord" placeholder="검색어를 입력하세요"
+        <form id="search" action="/search/result" method="POST">
+            <input type="text" class="searchWord" name="searchWord" placeholder="검색어를 입력하세요"
                     maxlength="255" size="255">
-                 
             <input class="searchButton" type="button" name="searchButton" value="검색" onclick="javascript:Check();">
        </form>
        </div>

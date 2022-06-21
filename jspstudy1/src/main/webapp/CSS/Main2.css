@@ -14,21 +14,28 @@ hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font-size: 100%;
     }
 /* 로고 및 검색창 */
-ol ul li {
+ol, ul, li{
 	list-style : none;
 }
 a {
 	text-decoration : none;
 	color : inherit;
 }
-.Top-logo {
-  background: #A2F5E6;
+#Top_logo_bg {
+  background: rgb(63, 198, 247, 0.9);
   width : 100%;
-  height : 100px;
+  height: 100px;
 }
-#logo-search-wrap {
+.logo {
+	font-size : 55px;
+	font-weight : bold;
+	font-family : 맑은고딕;
+	color : white;
+	
+}
+.logo-wrap {
 	position : absolute;
-	top : 20px;
+	top : 10px;
 	left : 575px;
 	
 }
@@ -39,7 +46,7 @@ a {
 	width : 100%;
 }
 
-#searchWord {
+.searchWord {
 	border : none;
 	width : 450px;
 	height : 35px;
@@ -59,10 +66,11 @@ a {
 
 /* 메뉴부문 */
 
-#menu-line{	
+#gmenu-line{	
 	height :80px;
 	width : 100%;
-    background : #A2F5E6;
+    background : rgb(63, 198, 247, 0.9);
+    float : left;
 }     
 #gmenu-box {
 	margin : 0 auto;
