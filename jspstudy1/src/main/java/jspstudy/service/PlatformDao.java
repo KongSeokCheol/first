@@ -24,7 +24,7 @@ public class PlatformDao {
 		int value=0;
 		
 		String sql="insert into pc_platform (originbidx, depth, level_, subject, content, writer, ip, midx, filename, view_count)"
-				+ " select max(bidx)+1,0,0,?,?,?,?,?,?,0 from  pc_platform";
+				+ " select max(bidx)+1,0,0,?,?,?,?,?,?,0 from pc_platform";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -118,7 +118,7 @@ public class PlatformDao {
 				pv.setSubject(rs.getString("subject"));
 				pv.setContent(rs.getString("content"));
 				pv.setWriter(rs.getString("writer"));
-				pv.setWriteday(rs.getNString("writeday"));
+				pv.setWriteday(rs.getString("writeday"));
 				pv.setFilename(rs.getString("filename"));
 				pv.setView_count(rs.getInt("view_count"));
 
@@ -177,7 +177,7 @@ public class PlatformDao {
 	public int deletePlatform(int bidx) {
 		int value=0;
 		
-		String sql="update PC_PLATFORM set delyn='Y', writeday=sysdate where bidx=?";
+		String sql="update PC_PLATFORM set delyn='Y', writeday=now() where bidx=?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -207,7 +207,7 @@ public class PlatformDao {
 		String sql1="update PC_Platform set depth=depth+1 where originbidx=? and depth > ?";
 		
 		String sql2="insert into PC_Platform(bidx,originbidx,depth,level_,subject,content,writer,ip,midx,view_count) "
-				+ "VALUES(bidx_b_seq.nextval,?,?,?,?,?,?,?,?,?)";
+				+ "VALUES(max(bidx)+1,?,?,?,?,?,?,?,?,?)";
 		
 		try {
 			//�듃�옖�옲�뀡

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="jspstudy.domain.PlatformVo" %> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
    
 <% PlatformVo pv = (PlatformVo)request.getAttribute("pv");  
  if (session.getAttribute("midx") == null){
@@ -53,7 +54,7 @@
        </form>
        </div>
 </header>
-<nav id="menu-line">
+<nav id="gmenu-line">
 <div id="gmenu-box">
 <ul id="gmenu-list">
 <!-- 관리자 권한 접근<a href="<%=request.getContextPath() %>/member/memberList.do">회원 목록가기</a> -->
@@ -104,8 +105,8 @@
         <input type="file" name="filename">
    </td>
 <tr>
-    <td>글쓴이
-        <input type="text" name="writer" size="10" value="<%=session.getAttribute("memberNick")%>" readonly="readonly">
+    <td>작성자
+        <input type="text" name="writer" size="10" value="${membernick}" readonly="readonly">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="button" name="btn" value="확인" onclick="check();">
         <input type="reset" name="reset" value="다시작성">

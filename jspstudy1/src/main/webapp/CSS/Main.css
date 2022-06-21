@@ -14,23 +14,28 @@ hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font-size: 100%;
     }
 /* 로고 및 검색창 */
-ol ul {
+ol ul li {
 	list-style : none;
 }
-
-.Top-logo {
-  background: #A2F5E6;
-  width : 100%;
-  height: 100px;
-}
-
 a {
 	text-decoration : none;
 	color : inherit;
 }
-#logo-search-wrap {
+#Top_logo_bg {
+  background: rgb(63, 198, 247, 0.9);
+  width : 100%;
+  height: 100px;
+}
+.logo {
+	font-size : 55px;
+	font-weight : bold;
+	font-family : 맑은고딕;
+	color : white;
+	
+}
+.logo-wrap {
 	position : absolute;
-	top : 20px;
+	top : 10px;
 	left : 575px;
 	
 }
@@ -41,7 +46,7 @@ a {
 	width : 100%;
 }
 
-#searchWord {
+.searchWord {
 	border : none;
 	width : 450px;
 	height : 35px;
@@ -64,7 +69,7 @@ a {
 #gmenu-line{	
 	height :80px;
 	width : 100%;
-    background : #A2F5E6;
+    background : rgb(63, 198, 247, 0.9);
     float : left;
 }     
 #gmenu-box {
@@ -87,15 +92,12 @@ a {
 }
 #gmenu-box #gmenu-list :hover{
 	background : white;
-	color : #A2F5E6;
+	color : #C0FFFF;
 }
 #on {
-	color : #00C3FF;
+	color : #C0FFFF;
 }
 
-li { 
-	list-style : none;
-}
 /* 메인 화면 로그인 */
 
 #account {
@@ -103,10 +105,6 @@ li {
   position: absolute;
   top: 100px;
   line-height : 15px;
-}
-a{
-	text-decoration : none;
-	color : inherit;
 }
 .eg_login {
 	padding:18px 18px 22px 18px;

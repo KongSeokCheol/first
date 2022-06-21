@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<% 
-String bidx = (String)request.getAttribute("bidx"); 
-%>    
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +17,7 @@ String bidx = (String)request.getAttribute("bidx");
   		fm.bidx.focus();
   		return;
   	}
-  	    fm.action = "<%=request.getContextPath()%>/Platform/PlatformDeleteAction.do";
+  	    fm.action = "${pageContext.request.contextPath}/Platform/PlatformDeleteAction.do";
 		fm.method = "post";
 		fm.submit();
 	
@@ -30,19 +25,19 @@ String bidx = (String)request.getAttribute("bidx");
 </script>
 </head>
 <body>
-<header class="Top-logo">
-        <div id="logo-search-wrap">
-           <a href="../index.jsp"> 
-             <img id="logo-img" alt="logo" src="../images/logo.png"></a></div>
+<header id="Top_logo_bg">
+        <div class="logo-wrap">
+           <a href="index.jsp" class="logo">Every G</a>
+        </div>
         <div>      
-        <form id="search" action="/search/result" method="GET">
-            <input type="text" id="searchWord" name="searchWord" placeholder="검색어를 입력하세요"
+        <form id="search" action="/search/result" method="POST">
+            <input type="text" class="searchWord" name="searchWord" placeholder="검색어를 입력하세요"
                     maxlength="255" size="255">
-            <input class="searchButton" type="button" name="searchButton" value="검색" onclick="location.href='<%=request.getContextPath()%>//'">
+            <input class="searchButton" type="button" name="searchButton" value="검색" onclick="javascript:Check();">
        </form>
        </div>
 </header>
-<nav id="menu-line">
+<nav id="gmenu-line">
 <div id="gmenu-box">
 <ul id="gmenu-list">
 <!-- 관리자 권한 접근<a href="<%=request.getContextPath() %>/member/memberList.do">회원 목록가기</a> -->
@@ -68,20 +63,20 @@ String bidx = (String)request.getAttribute("bidx");
 </nav>
 <h1>게시판 글삭제</h1>
 <article id="platformDelete">
-<table id=Delete>
 <form name="frm">
-<input type="hidden" name="bidx" value="<%=bidx%>">
+<table id=Delete>
+<input type="hidden" name="bidx" value="${bidx }">
 <tr>
 <td id="font">삭제하시겠습니까?</td>
 </tr>
 <tr>
 <td>
 <input type="button" name="btn" value="확인" onclick="check();">
-<input type="button" name="cancel" value="취소" onclick="location.href='<%=request.getContextPath()%>/Platform/PlatformContent.do?bidx=<%=bidx%>'">
+<input type="button" name="cancel" value="취소" onclick="location.href='${pageContext.request.contextPath }/Platform/PlatformContent.do?bidx=${bidx}'">
 </td>
 </tr>
-</form>
 </table>
+</form>
 </article>
 </body>
 </html>

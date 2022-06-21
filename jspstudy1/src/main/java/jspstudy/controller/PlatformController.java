@@ -174,9 +174,9 @@ public class PlatformController extends HttpServlet {
 			
 		}else if (command.equals("/Platform/PlatformDelete.do")) {
 			String bidx = request.getParameter("bidx");
-			int bidx_ = Integer.parseInt(bidx);
+			int bidx1 = Integer.parseInt(bidx);
 			
-			request.setAttribute("bidx", bidx);
+			request.setAttribute("bidx", bidx1);
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/Platform/PlatformDelete.jsp");					
 			rd.forward(request, response);
@@ -189,7 +189,7 @@ public class PlatformController extends HttpServlet {
 			PlatformDao pd = new PlatformDao();
 			int value = pd.deletePlatform(bidx_); 
 			
-			if (value ==1) {
+			if (value == 1) {
 				response.sendRedirect(request.getContextPath()+"/Platform/PlatformList.do");				
 			}else {
 				response.sendRedirect(request.getContextPath()+"/Platform/PlatformContent.do?bidx="+bidx);				
