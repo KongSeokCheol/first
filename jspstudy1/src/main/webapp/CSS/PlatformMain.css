@@ -17,7 +17,7 @@ html, body {
 	overflow-x :hidden;
 }
 /* 로고 및 검색창 */
-ol ul li {
+ol, ul, li{
 	list-style : none;
 }
 a {
@@ -231,7 +231,7 @@ _login {
 	border-collapse : collapse;
 	width : 1000px;
 	text-align : center;
-	background : #F0FFF0;
+	background : #EBFBFF;;
 }
 #writeList2{
 	border-collapse : collapse;
